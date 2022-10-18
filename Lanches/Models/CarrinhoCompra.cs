@@ -84,6 +84,7 @@ namespace Lanches.Models
 
         public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
             {
+            //?? = se carrinho de compras for nulo ele executa a consulta
             return CarrinhoCompraItens ?? (CarrinhoCompraItens = _context.CarrinhoCompraItens
                 .Where(c => c.CarrinhoCompraId == CarrinhoCompraId).
                 Include(s => s.Lanche)
